@@ -9,7 +9,6 @@ namespace P3FItemRenamer
 {
     class ItemRenamer
     {
-        // Key items start at 205E2A80
         private List<Item> originalItems;
 
         public ItemRenamer(List<Item> originalItems)
@@ -47,7 +46,7 @@ namespace P3FItemRenamer
             string ogName = UserInterface.GetInput("Enter the original name of the item (or ! to end)", itemValidator);
             if(ogName == "!")
                 return null;
-            int id = originalItems.FindIndex(item => item.Name == ogName) + 1;
+            int id = originalItems.FindIndex(item => item.Name.ToLower() == ogName.ToLower()) + 1;
             string name = UserInterface.GetInput($"Enter the new name for {originalItems[id - 1].Name}");
             return new Item(name, originalItems[id - 1].StartAddress, originalItems[id - 1].EndAddress);
         }

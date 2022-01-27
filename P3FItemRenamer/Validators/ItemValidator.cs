@@ -17,10 +17,15 @@ namespace P3FItemRenamer.Validators
 
         public bool Validate(object value)
         {
-            bool isValid = originalItems.Any(item => item.Name == (string)value);
+            string? name = value as string;
+            if (name == null)
+                return false;
+            if (name == "!")
+                return true;
+            bool isValid = originalItems.Any(item => item.Name.ToLower() == name.ToLower());
             if(!isValid)
                 Console.WriteLine($"Unknown item {value}");
-            return isValid || (string)value == "!";
+            return isValid;
         }
     }
 }
