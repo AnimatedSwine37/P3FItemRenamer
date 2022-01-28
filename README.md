@@ -5,7 +5,7 @@ A tool for creating pnachs to rename items in Persona 3 Fes.
 
 To use simply run the exe and follow the command line instructions. The tool should work with any type of items in the game however, if there are any things missing they can easily be added.
 
-One limitation of the tool to note is that item names cannot be much longer than the original due to the way they are stored. Item names are stored in 4 byte chunks so if an item's name is 6 characters long it will have space for 7 characters (as one is required for the string terminator).
+One limitation of the tool to note is that item names cannot be much longer than the original due to the way they are stored. Item names are stored in 8 byte chunks so if an item's name is 6 characters long it will have space for 7 characters (as one is required for the string terminator).
 
 ## Renaming Other Things
 This tool is flexible and can in fact make pnaches for changing any static strings in any place of any game. To add a new section of strings you want to rename firstly find the strings in cheat engine. 
