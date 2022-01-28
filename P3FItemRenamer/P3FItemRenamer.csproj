@@ -14,28 +14,28 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Accessories.CEM">
+    <None Update="NameLists\Accessories.CEM">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Armour.CEM">
+    <None Update="NameLists\Armour.CEM">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Boots.CEM">
+    <None Update="NameLists\Boots.CEM">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Items.CEM">
+    <None Update="NameLists\Items.CEM">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Key Items.CEM">
+    <None Update="NameLists\Key Items.CEM">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="NameLists.json">
+    <None Update="NameLists\NameLists.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Short Items.CEM">
+    <None Update="NameLists\Short Items.CEM">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Weapons.CEM">
+    <None Update="NameLists\Weapons.CEM">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

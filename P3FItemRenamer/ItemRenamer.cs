@@ -22,11 +22,11 @@ namespace P3FItemRenamer
         {
             string basePath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
             List<Item> originalItems = new List<Item>();
-            string nameListJson = File.ReadAllText(Path.Combine(basePath, "NameLists.json"));
+            string nameListJson = File.ReadAllText(Path.Combine(basePath, "NameLists", "NameLists.json"));
             NameList nameList = JsonSerializer.Deserialize<NameList>(nameListJson);
             foreach (NameFile file in nameList.NameFiles)
             {
-                originalItems.AddRange(NameListConverter.ConvertFile(Path.Combine(basePath, file.File), file.StartAddress));
+                originalItems.AddRange(NameListConverter.ConvertFile(Path.Combine(basePath, "NameLists", file.File), file.StartAddress));
             }
             return originalItems;
         }
