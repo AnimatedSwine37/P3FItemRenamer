@@ -60,8 +60,9 @@ namespace P3FItemRenamer
             string ogName = UserInterface.GetInput("Enter the original name of the item (or ! to end)", itemValidator);
             if(ogName == "!")
                 return null;
-            int id = originalItems.FindIndex(item => item.Name.ToLower() == ogName.ToLower()) + 1;
-            string name = UserInterface.GetInput($"Enter the new name for {originalItems[id - 1].Name}");
+            Item ogItem = originalItems.First(item => item.Name.ToLower() == ogName.ToLower());
+            int id = originalItems.IndexOf(ogItem) + 1;
+            string name = UserInterface.GetInput($"Enter the new name for {originalItems[id - 1].Name}", new ItemLengthValidator(ogItem));
             return new Item(name, originalItems[id - 1].StartAddress, originalItems[id - 1].EndAddress);
         }
     }

@@ -27,11 +27,14 @@ namespace P3FItemRenamer
                 }
                 else if(ch == 0 && lastChar != 0)
                 {
+                    if (names.Count > 0)
+                        names.Last().EndAddress = startIndex + startAddress - 2;
                     names.Add(new Item(currentName, startIndex + startAddress, startIndex + startAddress + currentName.Length));
                     currentName = "";
                 }
                 lastChar = ch;
             }
+            names.Last().EndAddress = startIndex + startAddress - 2;
             return names;
         }
     }

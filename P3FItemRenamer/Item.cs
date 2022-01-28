@@ -9,8 +9,8 @@ namespace P3FItemRenamer
     public class Item
     {
         public string Name { get; set; }
-        public long StartAddress { get; }
-        public long EndAddress { get; }
+        public long StartAddress { get; set; }
+        public long EndAddress { get; set; }
 
         public Item(string name, long startIndex, long endAddress)
         {
