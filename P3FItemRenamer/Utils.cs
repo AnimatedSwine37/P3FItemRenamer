@@ -10,7 +10,7 @@ namespace P3FItemRenamer
 {
     class Utils
     {
-        public static async void CheckForUpdates()
+        public static async Task CheckForUpdates()
         {
             using (var manager = new UpdateManager(
                 new GithubPackageResolver("AnimatedSwine37", "P3FItemRenamer", "*.zip"),
@@ -19,7 +19,7 @@ namespace P3FItemRenamer
                 var result = await manager.CheckForUpdatesAsync();
                 if (result.CanUpdate)
                 {
-                    bool doUpdate = UserInterface.GetBool("A new version of P3F Item Renamer is available. Would you like to update now?");
+                    bool doUpdate = UserInterface.GetBool("A new version of P3F Item Renamer is available. Would you like to update now (y/n)?");
                     if (!doUpdate)
                         return;
                     // Prepare an update by downloading and extracting the package

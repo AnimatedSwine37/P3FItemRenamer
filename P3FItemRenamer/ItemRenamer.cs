@@ -34,7 +34,6 @@ namespace P3FItemRenamer
         // Start the process of getting new item names
         public void Start()
         {
-            Console.WriteLine("Welcome to the very good P3F item rename pnach maker made by AnimatedSwine37.");
             List<Item> items = GetRenamedItems();
             Console.WriteLine("Thanks, that's all I need. I'll generate the pnach now.");
             PnachCreator.CreatePnach(items);
