@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace P3FItemRenamer
@@ -11,9 +13,22 @@ namespace P3FItemRenamer
     {
         private List<Item> originalItems;
 
-        public ItemRenamer(List<Item> originalItems)
+        public ItemRenamer()
         {
-            this.originalItems = originalItems;
+            originalItems = GetOriginalItems();
+        }
+
+        private List<Item> GetOriginalItems()
+        {
+            string basePath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            List<Item> originalItems = new List<Item>();
+            string nameListJson = File.ReadAllText(Path.Combine(basePath, "NameLists.json"));
+            NameList nameList = JsonSerializer.Deserialize<NameList>(nameListJson);
+            foreach (NameFile file in nameList.NameFiles)
+            {
+                originalItems.AddRange(NameListConverter.ConvertFile(Path.Combine(basePath, file.File), file.StartAddress));
+            }
+            return originalItems;
         }
 
         // Start the process of getting new item names

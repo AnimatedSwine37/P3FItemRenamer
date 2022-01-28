@@ -191,9 +191,17 @@ namespace P3FItemRenamer
                 {
                     return result;
                 }
+                else if(response.ToLower() == "y" || response.ToLower() == "yes")
+                {
+                    return true;
+                }
+                else if(response.ToLower() == "n" || response.ToLower() == "no")
+                {
+                    return false;
+                }
                 else
                 {
-                    Error("Supplied value is not a boolean");
+                    Error("Invalid response, please enter y or n");
                 }
             }
         }

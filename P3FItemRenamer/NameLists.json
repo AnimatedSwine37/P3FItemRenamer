@@ -1,0 +1,32 @@
+{
+  "NameFiles": [
+    {
+      "File": "Accessories.CEM",
+      "StartAddress": 543035496
+    },
+    {
+      "File": "Armour.CEM",
+      "StartAddress": 543027672
+    },
+    {
+      "File": "Boots.CEM",
+      "StartAddress": 543032360
+    },
+    {
+      "File": "Items.CEM",
+      "StartAddress": 543037984
+    },
+    {
+      "File": "Key Items.CEM",
+      "StartAddress": 543042176
+    },
+    {
+      "File": "Short Items.CEM",
+      "StartAddress": 545044112
+    },
+    {
+      "File": "Weapons.CEM",
+      "StartAddress": 543019760
+    }
+  ]
+}
