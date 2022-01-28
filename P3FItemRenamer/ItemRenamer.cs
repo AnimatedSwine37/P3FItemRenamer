@@ -42,10 +42,6 @@ namespace P3FItemRenamer
 
         private List<Item> GetRenamedItems()
         {
-            if(File.Exists("94A82AAA_RenameStuff.pnach"))
-                Console.WriteLine("I've detected an existing 94A82AAA_RenameStuff.pnach. " +
-                    "Please be aware this will be overwritten when you're finished. If you want to add to it make a backup and once done, " +
-                    "manually add the newly generated patches to the backup.");
             Console.WriteLine("I'm going to ask you for the items you want to rename now, k :)");
             List<Item> items = new List<Item>();
             ItemValidator itemValidator = new ItemValidator(originalItems);

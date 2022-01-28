@@ -14,6 +14,9 @@ namespace P3FItemRenamer
                                "comment=Auto Generated Rename Pnach\n" +
                                "author= AnimatedSwine37\n" +
                                "version=1\n\n";
+            string pnachPath = "94A82AAA_RenameStuff.pnach";
+            if (AppendToExistingPnach())
+                pnachText = File.ReadAllText(pnachPath) + "\n";
             foreach (Item item in items)
             {
                 pnachText += $"// {item.Name}\n";
@@ -34,9 +37,16 @@ namespace P3FItemRenamer
                 }
                 pnachText += "\n";
             }
-            string pnachPath = "94A82AAA_RenameStuff.pnach";
             File.WriteAllText(pnachPath, pnachText);
             Console.WriteLine($"Successfully wrote rename pnach to {pnachPath}");
+        }
+
+        private static bool AppendToExistingPnach()
+        {
+            if (!File.Exists("94A82AAA_RenameStuff.pnach"))
+                return false;
+            return UserInterface.GetBool("I've detected an existing 94A82AAA_RenameStuff.pnach." +
+                "\nWould you like to apppend your changes to this? If not it will be overwritten (y/n)");
         }
     }
 }
